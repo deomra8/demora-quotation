@@ -100,8 +100,8 @@
         </li>
         <!-- Products -->
         <li>
-            <a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 font-medium transition-colors"
-                href="#">
+            <a class="{{ request()->routeIs('admin.products.*') ? $active : $inactive }}"
+                href="{{ route('admin.products.index') }}">
                 <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">chair</span>
                 <span class="text-sm">Products</span>
             </a>
