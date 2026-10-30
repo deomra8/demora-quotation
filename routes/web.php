@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
@@ -18,4 +19,5 @@ Route::middleware('auth')->as('admin.')->group(function () {
 
     Route::resource('/companies', CompanyController::class)->names('companies');
     Route::resource('/products', ProductController::class)->names('products');
+    Route::resource('/categories', CategoryController::class)->names('categories');
 });

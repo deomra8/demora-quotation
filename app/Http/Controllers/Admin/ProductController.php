@@ -39,14 +39,14 @@ class ProductController extends Controller
     {
         $product->load('images');
 
-        return view('admin.pages.products.edit', compact('product'));
+        return view('admin.pages.products.show', compact('product'));
     }
 
     public function edit(Product $product): View
     {
         $product->load('images');
 
-        return view('admin.pages.products.show', compact('product'));
+        return view('admin.pages.products.edit', compact('product'));
     }
 
     public function update(UpdateProductRequest $request, Product $product): RedirectResponse

@@ -108,8 +108,8 @@
         </li>
         <!-- Categories -->
         <li>
-            <a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 font-medium transition-colors"
-                href="#">
+            <a class="{{ request()->routeIs('admin.categories.*') ? $active : $inactive }}"
+                href="{{ route('admin.categories.index') }}">
                 <span class="material-symbols-outlined text-slate-400">category</span>
                 <span class="text-sm">Categories</span>
             </a>
@@ -145,7 +145,7 @@
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdzE9NVKB9tekTx0_i8ajkUpJPnSvMVVrZYSgge8_Dvr-sgRcMK7YO7vv7uSDwoJf4nOy9SleuGQR91hOzYSyCbl68o4-0qClOU5w5x-7vxh0Ckn2kJl49RuHWOTDOEnjAPf-kJsjTfn3T4AnbylTphvOgqUTwkdO1pdbFxTp3XariLiC8etr2b_W0re-GVEK6sbqJllQcAzCUQB2MxSyAmK7fmI3dplzsVQKAqzv8vN8cJd-Dfv-X7Q" />
         <div class="flex flex-col min-w-0 flex-1">
             <span class="text-xs font-semibold text-slate-900 truncate">  {{ auth()->user()->name }} </span>
-            <span class="text-[11px] text-slate-500 truncate">admin@officedesign.pro</span>
+            <span class="text-[11px] text-slate-500 truncate">  {{ auth()->user()->email }} </span>
         </div>
         <form method="POST" action="{{ route('admin.logout') }}" class="ml-auto">
             @csrf
